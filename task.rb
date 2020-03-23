@@ -56,7 +56,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-  array.map!(&:to_i)
+  array.map! {|num|num.to_i}
   # 以下は変更しないで下さい
   p array
 end
@@ -69,7 +69,7 @@ def q8
   language.capitalize!}
 
   upper_case_programming_languages = programming_languages.map {|language|
-  language.upcase!}
+  language.upcase}
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -79,6 +79,10 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
+  names.map!.with_index(1) {|name,index|
+    "会員No.#{index} #{name}さん"}
+
+  puts names
 
 end
 

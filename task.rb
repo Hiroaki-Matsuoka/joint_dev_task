@@ -145,17 +145,18 @@ def q16
 
   # 以下に回答を記載
   users.each do |user|
-    puts "「私の名前は#{user.dig(:name)}です。年齢は#{user.dig(:age)}歳です。」"
+    puts "「私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です。」"
   end
 end
 
 class UserQ17
   # 以下に回答を記載
-  # def info
-  #   p "名前:#{new.dig(:name)}"
-  #   p "年齢:#{new.dig(:age)}"
-  #   p "性別:#{new.dig(:gender)}"
-  # end
+  def initialize(params)
+    @params = params
+  end
+  def info
+    puts "名前:#{@params[:name]}\n年齢:#{@params[:age]}\n性別:#{@params[:gender]}"
+  end
 end
 
 def q17
@@ -170,7 +171,12 @@ end
 
 class UserQ18
   # 以下に回答を記載
-
+  def initialize(params)
+    @age = params[:age]
+  end
+  def introduce
+    @age > 11 ? "こんにちはあじーと申します。宜しくお願いいたします。" : "はいさいまいど〜,ゆたぼんです!!!"
+  end
 end
 
 def q18
@@ -187,6 +193,9 @@ class Item
 
   def initialize(name)
     @name = name
+  end
+  def name
+    @name[:name]
   end
 end
 

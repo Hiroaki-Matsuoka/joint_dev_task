@@ -151,11 +151,20 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize(params)
-    @params = params
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+    @gender = params[:gender]
+    @admin = params[:admin]
   end
   def info
-    puts "名前:#{@params[:name]}\n年齢:#{@params[:age]}\n性別:#{@params[:gender]}\n管理者権限:#{@params[:admin]}"
+    x = @admin
+    puts <<~EOS
+    名前:#{@name}
+    年齢:#{@age}
+    性別:#{@gender}
+    EOS
+    puts result = x == true ? '管理者権限有' : '管理者権限無'
   end
 end
 
@@ -171,7 +180,7 @@ end
 
 class UserQ18
   # 以下に回答を記載
-  def initialize(params)
+  def initialize(**params)
     @name = params[:name]
     @age = params[:age]
   end
@@ -191,7 +200,7 @@ end
 
 class Item
   # 以下を修正して下さい
-  attr_accessor :name
+  attr_reader :name
   def initialize(name:)
     @name = name
   end
@@ -205,7 +214,7 @@ end
 
 class UserQ20
   # 以下に回答を記載
-  attr_accessor :name, :age
+  attr_reader :name, :age
  def initialize(params)
    @name = params[:name]
    @age = params[:age]

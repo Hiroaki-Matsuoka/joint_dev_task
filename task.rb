@@ -164,7 +164,6 @@ class UserQ17
     年齢:#{@age}
     性別:#{@gender}
     EOS
-    puts result = x == true ? '管理者権限有' : '管理者権限無'
   end
 end
 
@@ -236,7 +235,7 @@ class Zoo
          @entry_fee[:children]
        when 13..64
          @entry_fee[:adult]
-       when 65..125
+       when 65..120
          @entry_fee[:senior]
       end
       p "#{@name}さんの入場料金は#{entry_fee_result}円です"
